@@ -102,7 +102,7 @@ To store your certificate files in a folder other than `trellis/certs/{{ env }}`
 
 ```yaml
 # Defaults to trellis/certs/env - where env is development, staging or production
-trellis_ca_certificates_local_dir: custom-local-directory/{{ env }}/
+trellis_ca_certificates_local_dir: custom-local-directory/{{ env }}
 ```
 
 ### Remote destination directory

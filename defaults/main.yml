@@ -1,5 +1,5 @@
 ---
-trellis_ca_certificates_local_dir: certs/{{ env }}/
+trellis_ca_certificates_local_dir: certs/{{ env }}
 trellis_ca_certificates_remote_dir: /usr/local/share/ca-certificates
 trellis_ca_certificates_handler: /usr/sbin/update-ca-certificates
 trellis_ca_certificates_trusted: []
