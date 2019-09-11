@@ -110,5 +110,5 @@ Unless you have configured your remote OpenSSL to look for certs in a different 
 
 ```yaml
 # Defaults to OpenSSL Trusted store on Ubuntu 18.04
-trellis_ca_certificates_local_dir: /usr/local/share/ca-certificates
+trellis_ca_certificates_remote_dir: /usr/local/share/ca-certificates
 ```
