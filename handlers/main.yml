@@ -1,0 +1,4 @@
+---
+- name: update ca-certificates
+  become: true
+  command: "{{ trellis_ca_certificates_handler }}"
