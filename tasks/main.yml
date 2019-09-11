@@ -9,7 +9,7 @@
 - name: Install trusted CA Certificates
   become: true
   copy:
-    src: "{{ trellis_ca_certificates_local_dir }}/{{ env }}/{{ item.src }}"
+    src: "{{ trellis_ca_certificates_local_dir }}/{{ item.src }}"
     dest: "{{ trellis_ca_certificates_remote_dir }}/{{ item.name }}.crt"
     group: root
     mode: '0644'
