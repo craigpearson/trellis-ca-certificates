@@ -16,9 +16,8 @@ Installation
 
 ```yaml
 # trellis/galaxy.yml
-- name: trellis_ca_certificates
-  src: https://github.com/craigpearson/trellis-ca-certificates
-  version: develop
+- name: trellis-ca-certificates
+  src: craigpearson.trellis_ca_certificates
 ```
 
 ### Include in provision playbook
