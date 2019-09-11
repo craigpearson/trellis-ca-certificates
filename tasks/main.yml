@@ -1,0 +1,28 @@
+---
+# tasks file for trellis-ca-certificates
+- name: Install CA Certificates package
+  become: true
+  package:
+    name: ca-certificates
+    state: present
+
+- name: Install trusted CA Certificates
+  become: true
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ trellis_ca_certificates_local_dir }}/{{ env }}/{{ item.name }}.crt"
+    group: root
+    mode: '0644'
+    owner: root
+  with_items: "{{ trellis_ca_certificates_trusted }}"
+  when: item.src is defined
+  loop_control:
+    label: "{{ item.name }}"
+  register: _trellis_ca_certificates_added
+  notify: update ca-certificates
+
+- name: Update CA Certificates
+  become: true
+  command: "{{ trellis_ca_certificates_handler }}"
+  when:
+    - _trellis_ca_certificates_added is changed
