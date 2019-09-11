@@ -97,16 +97,16 @@ trellis_ca_certificates_trusted:
   - src: db-slave.crt
 ```
 
-### Source directory for `.crt` files
-If you wish to store your certificate files in a folder other than `trellis/certs/{{ env }}` you can do that like so:
+### Source directory
+To store your certificate files in a folder other than `trellis/certs/{{ env }}`:
 
 ```yaml
 # Defaults to trellis/certs/env - where env is development, staging or production
-trellis_ca_certificates_local_dir: source-certificate-director/{{ env }}/
+trellis_ca_certificates_local_dir: custom-local-directory/{{ env }}/
 ```
 
-### Remote destination directory for `.crt` files
-Unless you have configured OpenSSL to look for certs in a different directory you shouldn't need to change this
+### Remote destination directory
+Unless you have configured your remote OpenSSL to look for certs in a different directory you shouldn't need to change this
 
 ```yaml
 # Defaults to OpenSSL Trusted store on Ubuntu 18.04
